@@ -1,0 +1,235 @@
+/* 전체적인 스타일 */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9; /* 밝은 회색 배경 */
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 4px solid #e1e1e1;
+    border-top: 4px solid #007BFF; /* 세련된 파란색 */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 헤더 스타일 */
+header {
+    background: linear-gradient(135deg, #0a3d63, #1d4e89); /* 더 세련된 그라데이션 */
+    color: #fff;
+    padding: 4rem 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header .profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .profile-photo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+header nav a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+header nav a:hover {
+    color: #ff7f50; /* 부드러운 오렌지 색 */
+}
+
+/* 각 섹션 스타일에 색상 추가 */
+.section {
+    padding: 3rem 2rem;
+    margin: 3rem auto;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 섹션별 폰트 색상 통일 */
+#about, #education, #experience, #projects, #skills, #media, #contact, #social {
+    color: #333;  /* 본문 텍스트 색상 일관되게 */
+}
+
+.section h2 {
+    font-size: 2.3rem;
+    color: #007BFF; /* 제목은 파란색으로 통일 */
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #666; /* 본문 텍스트 색상 */
+    line-height: 1.8;
+}
+
+.section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.section ul li {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #2f3b52;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+footer a {
+    color: #ff7f50;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #ffd166;
+}
+
+/* 이력서 다운로드 버튼 */
+#download-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+#download-btn a {
+    background-color: #007BFF; /* 파란색 배경 */
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#download-btn a:hover {
+    background-color: #0056b3; /* 다크 블루로 변환 */
+    transform: scale(1.05);
+}
+
+/* 스크롤 버튼 스타일 */
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 14px 20px;
+    font-size: 18px;
+    background-color: #2f3b52;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#scrollToTop.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scrollToTop.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#scrollToTop:hover {
+    background-color: #6b7b8c;
+}
+
+/* 섹션에 애니메이션 효과 추가 */
+.section {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+}
