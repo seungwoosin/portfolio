@@ -3,85 +3,68 @@ body {
     margin: 0;
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f6f9; /* 밝은 회색 배경 */
-    color: #333;
+    background-color: #F9FAFB; /* 밝고 깨끗한 회색 배경 */
+    color: #4B5563; /* 현대적인 다크 그레이 색상 */
     transition: background-color 0.3s ease;
 }
 
-#loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* 로딩 스피너 */
 .spinner {
     border: 4px solid #e1e1e1;
-    border-top: 4px solid #007BFF; /* 세련된 파란색 */
+    border-top: 4px solid #8B5CF6; /* 보라색 */
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 /* 헤더 스타일 */
 header {
-    background: linear-gradient(135deg, #0a3d63, #1d4e89); /* 더 세련된 그라데이션 */
+    background: linear-gradient(135deg, #8B5CF6, #A78BFA); /* 보라색 그라데이션 */
     color: #fff;
-    padding: 4rem 0;
+    padding: 3rem 0;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     position: relative;
     transition: background-color 0.3s ease-in-out;
-}
-
-header .container {
     display: flex;
     flex-direction: column;
+    justify-content: center; /* 상단과 하단의 공간을 고르게 분배 */
     align-items: center;
     text-align: center;
 }
 
+/* 헤더 내 프로필 사진 스타일 */
 header .profile-photo img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* 이미지 hover 효과 */
 header .profile-photo img:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* 헤더 내 제목 */
 header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;  /* 크기 조정 */
     font-weight: 700;
     margin: 0.5rem 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 텍스트에 그림자 효과 추가 */
 }
 
+/* 네비게이션 메뉴 */
 header nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 2.5rem;
-    margin-top: 2rem;
+    gap: 1.5rem;  /* 간격 조정 */
+    margin-top: 1.5rem;  /* 상단 여백을 조금 줄임 */
+    justify-content: center;
 }
 
 header nav a {
@@ -90,14 +73,16 @@ header nav a {
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+/* 네비게이션 hover 효과 */
 header nav a:hover {
-    color: #ff7f50; /* 부드러운 오렌지 색 */
+    color: #D946EF; /* 보라색 강조 */
+    transform: scale(1.1); /* 클릭할 때 크기 약간 확대 */
 }
 
-/* 각 섹션 스타일에 색상 추가 */
+/* 각 섹션 스타일 */
 .section {
     padding: 3rem 2rem;
     margin: 3rem auto;
@@ -106,43 +91,34 @@ header nav a:hover {
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     transform: translateY(20px);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;  /* 기본적으로 숨겨짐 */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 1s ease-out;
 }
 
-/* 섹션별 폰트 색상 통일 */
+/* 섹션별 폰트 색상 */
 #about, #education, #experience, #projects, #skills, #media, #contact, #social {
     color: #333;  /* 본문 텍스트 색상 일관되게 */
 }
 
 .section h2 {
     font-size: 2.3rem;
-    color: #007BFF; /* 제목은 파란색으로 통일 */
+    color: #8B5CF6; /* 보라색 제목 */
     margin-bottom: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
+/* 본문 텍스트 색상 */
 .section p {
     font-size: 1.1rem;
-    color: #666; /* 본문 텍스트 색상 */
+    color: #666;
     line-height: 1.8;
-}
-
-.section ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.section ul li {
-    font-size: 1.1rem;
-    color: #444;
-    margin-bottom: 0.5rem;
 }
 
 /* 푸터 스타일 */
 footer {
-    background-color: #2f3b52;
+    background-color: #6B46C1; /* 어두운 보라색 */
     color: #fff;
     text-align: center;
     padding: 2rem 0;
@@ -156,26 +132,18 @@ footer p {
 }
 
 footer a {
-    color: #ff7f50;
+    color: #D946EF; /* 밝은 보라색 링크 */
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 footer a:hover {
-    color: #ffd166;
+    color: #9D4EDD; /* hover 시 어두운 보라색 */
 }
 
 /* 이력서 다운로드 버튼 */
-#download-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-}
-
 #download-btn a {
-    background-color: #007BFF; /* 파란색 배경 */
+    background-color: #8B5CF6; /* 보라색 배경 */
     color: #fff;
     padding: 12px 25px;
     font-size: 1rem;
@@ -186,8 +154,8 @@ footer a:hover {
 }
 
 #download-btn a:hover {
-    background-color: #0056b3; /* 다크 블루로 변환 */
-    transform: scale(1.05);
+    background-color: #7C3AED; /* 더 어두운 보라색 */
+    transform: scale(1.1);
 }
 
 /* 스크롤 버튼 스타일 */
@@ -197,7 +165,7 @@ footer a:hover {
     right: 30px;
     padding: 14px 20px;
     font-size: 18px;
-    background-color: #2f3b52;
+    background-color: #8B5CF6;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -221,15 +189,11 @@ footer a:hover {
 }
 
 #scrollToTop:hover {
-    background-color: #6b7b8c;
+    background-color: #9D4EDD;
 }
 
-/* 섹션에 애니메이션 효과 추가 */
-.section {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-}
-
+/* 섹션 애니메이션 효과 */
 .section.visible {
     opacity: 1;
+    transform: translateY(0); /* 스크롤 시 부드럽게 등장 */
 }
