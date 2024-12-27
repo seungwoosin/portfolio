@@ -7,7 +7,8 @@
   <meta name="author" content="신승우">
   <meta name="keywords" content="Java, Spring, Spring Boot, MySQL, 백엔드 개발자, 포트폴리오">
   <title>포트폴리오 - 신승우</title>
-  <link rel="stylesheet" href="portfolio-site/style.css">
+  <!-- 수정된 경로 -->
+  <link rel="stylesheet" href="/portfolio-site/style.css">
   <!-- Font Awesome 아이콘 라이브러리 추가 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -19,7 +20,8 @@
   <header>
     <div class="container">
       <div class="profile-photo">
-        <img src="images/증명사진3.jpg" alt="증명사진">
+        <!-- 이미지 경로 수정 -->
+        <img src="/portfolio-site/images/증명사진3.jpg" alt="증명사진">
       </div>
       <h1>신승우</h1>
       <p>소프트웨어 개발자 | 주요 기술: Java, Spring, MySQL</p>
@@ -41,7 +43,8 @@
 
     <!-- 이력서 다운로드 버튼 -->
     <div id="download-btn">
-      <a href="portfolio-site/assets/이력서.pdf" download><i class="fas fa-download"></i> 이력서 다운로드</a>
+      <!-- 다운로드 경로 수정 -->
+      <a href="/portfolio-site/assets/이력서.pdf" download><i class="fas fa-download"></i> 이력서 다운로드</a>
     </div>
   </header>
 
@@ -49,7 +52,6 @@
     <section id="about" class="section">
       <h2>자기소개서</h2>
       <p>안녕하세요! 저는 Java와 Spring을 활용한 백엔드 개발에 열정이 있는 개발자 신승우입니다. 다양한 경험을 통해 개발 역량을 키워왔고, 다양한 프로젝트를 통해 실력을 쌓아왔습니다. 효율적인 문제 해결과 협업을 중요하게 생각하며, 항상 새로운 기술을 배우는 것에 열정을 가지고 있습니다.</p>
-
       <p><strong>1번 - 계기:</strong><br>
         집안 사정으로 인해 대학을 중퇴하고 군대에서 통신병으로 활동하며 네트워크와 시스템 관리의 중요성을 체감하였습니다. 이후 전산 업무를 담당하여 컴퓨터 및 네트워크를 관리하면서 시스템의 안정성을 유지하고 문제를 해결하는 과정에서 큰 보람을 느꼈습니다. 시간이 갈수록 불량에 대한 고장을 단순히 고쳐주는 일만 반복하면서 성장의 한계를 느끼게 되었고, 진정으로 제가 원하는 길은 아니라고 생각했습니다. 오랜 고민 끝에 저만의 기술력이 부족하다는 사실을 인식하고, 전문성을 발휘할 수 있는 일을 찾아야겠다는 결심을 하게 되었습니다. 그 후 직접적인 시스템 개발을 할 수 있는 백엔드 개발자로 도전을 마음먹고 국비 교육 프로그램을 통해 백엔드 자바 및 웹 개발 과정에 참여하여 장기간의 공부를 시작하게 되었습니다.</p>
       
@@ -126,12 +128,12 @@
       <h2>프로젝트 작업 영상</h2>
       <h3>팀프로젝트 1차 작업</h3>
       <video controls width="600">
-      <source src="portfolio-site/assets/1차 프로젝트.mp4" type="video/mp4">
-      브라우저에서 비디오를 지원하지 않습니다.
+        <source src="/portfolio-site/assets/1차 프로젝트.mp4" type="video/mp4">
+        브라우저에서 비디오를 지원하지 않습니다.
       </video>
       <h3>프로젝트 2차 작업</h3>
       <video controls width="600">
-        <source src="portfolio-site/assets/2차 개인프로젝트.mp4" type="video/mp4">
+        <source src="/portfolio-site/assets/2차 개인프로젝트.mp4" type="video/mp4">
         브라우저에서 비디오를 지원하지 않습니다.
       </video>
     </section>
@@ -155,7 +157,7 @@
     <button id="scrollToTop" class="hidden" aria-label="페이지 상단으로 이동"><i class="fas fa-arrow-up"></i> Top</button>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/portfolio-site/script.js"></script>
   <script>
     window.addEventListener('load', function() {
         document.getElementById('loading').style.display = 'none';
