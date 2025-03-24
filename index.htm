@@ -6,10 +6,19 @@
   <meta name="description" content="신승우 포트폴리오 웹사이트, Java, Spring을 활용한 백엔드 개발자">
   <meta name="author" content="신승우">
   <meta name="keywords" content="Java, Spring, Spring Boot, MySQL, 백엔드 개발자, 포트폴리오">
-  <title>포트폴리오 - 신승우</title>
-  <!-- 수정된 경로 -->
+  <!-- Open Graph 태그 -->
+  <meta property="og:title" content="신승우 - Java, Spring 백엔드 개발자 포트폴리오">
+  <meta property="og:description" content="신승우의 포트폴리오 웹사이트입니다. Java와 Spring을 활용한 백엔드 개발 프로젝트를 확인하세요.">
+  <meta property="og:image" content="portfolio-site/images/증명사진3.jpg">
+  <meta property="og:url" content="https://your-portfolio-url.com">
+  <meta property="og:type" content="website">
+  <!-- Twitter Card 태그 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="신승우 - Java, Spring 백엔드 개발자 포트폴리오">
+  <meta name="twitter:description" content="신승우의 포트폴리오 웹사이트입니다. Java와 Spring을 활용한 백엔드 개발 프로젝트를 확인하세요.">
+  <meta name="twitter:image" content="portfolio-site/images/증명사진3.jpg">
+  <title>신승우 - Java, Spring 백엔드 개발자 포트폴리오</title>
   <link rel="stylesheet" href="portfolio-site/style.css">
-  <!-- Font Awesome 아이콘 라이브러리 추가 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -20,203 +29,208 @@
   <header>
     <div class="container">
       <div class="profile-photo">
-        <!-- 이미지 경로 수정 -->
-        <img src="portfolio-site/images/증명사진3.jpg" alt="증명사진">
+        <!-- <picture> 태그 제거하고 단순 img 태그로 변경 -->
+        <img src="portfolio-site/images/증명사진3.jpg" alt="증명사진" loading="lazy">
       </div>
       <h1>신승우</h1>
-      <p>소프트웨어 개발자 | 주요 기술: Java, Spring, MySQL</p>
+      <p data-ko="소프트웨어 개발자 | 주요 기술: Java, Spring, MySQL" data-en="Software Developer | Key Skills: Java, Spring, MySQL">소프트웨어 개발자 | 주요 기술: Java, Spring, MySQL</p>
 
       <!-- 햄버거 메뉴 버튼 -->
-      <button id="hamburger" class="hamburger-icon"><i class="fas fa-bars"></i></button>
+      <button id="hamburger" class="hamburger-icon" aria-label="메뉴 열기"><i class="fas fa-bars"></i></button>
       <nav id="navbar" class="hidden">
+        <button id="close-nav" class="close-nav" aria-label="메뉴 닫기"><i class="fas fa-times"></i></button>
         <ul>
-          <li><a href="#about"><i class="fas fa-user"></i> 소개</a></li>
-          <li><a href="#education"><i class="fas fa-graduation-cap"></i> 학력</a></li>
-          <li><a href="#experience"><i class="fas fa-briefcase"></i> 경력</a></li>
-          <li><a href="#projects"><i class="fas fa-project-diagram"></i> 프로젝트</a></li>
-          <li><a href="#skills"><i class="fas fa-cogs"></i> 기술 스택</a></li>
-          <li><a href="#media"><i class="fas fa-video"></i> 미디어</a></li>
-          <li><a href="#contact"><i class="fas fa-envelope"></i> 연락처</a></li>
+          <li><a href="#about"><i class="fas fa-user"></i> <span data-ko="소개" data-en="About">소개</span></a></li>
+          <li><a href="#education"><i class="fas fa-graduation-cap"></i> <span data-ko="학력" data-en="Education">학력</span></a></li>
+          <li><a href="#experience"><i class="fas fa-briefcase"></i> <span data-ko="경력" data-en="Experience">경력</span></a></li>
+          <li><a href="#projects"><i class="fas fa-project-diagram"></i> <span data-ko="프로젝트" data-en="Projects">프로젝트</span></a></li>
+          <li><a href="#skills"><i class="fas fa-cogs"></i> <span data-ko="기술 스택" data-en="Skills">기술 스택</span></a></li>
+          <li><a href="#media"><i class="fas fa-video"></i> <span data-ko="미디어" data-en="Media">미디어</span></a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-ko="연락처" data-en="Contact">연락처</span></a></li>
         </ul>
       </nav>
     </div>
 
     <!-- 이력서 다운로드 버튼 -->
     <div id="download-btn">
-      <!-- 다운로드 경로 수정 -->
       <a href="portfolio-site/assets/이력서.pdf" download>
-        <i class="fas fa-download"></i> 이력서 다운로드
+        <i class="fas fa-download"></i> <span data-ko="이력서 다운로드" data-en="Download Resume">이력서 다운로드</span>
       </a>
     </div>
+
+    <!-- 다크 모드 토글 버튼 -->
+    <button id="theme-toggle" aria-label="다크 모드 전환"><i class="fas fa-moon"></i></button>
+
+    <!-- 언어 전환 버튼 -->
+    <button id="lang-toggle" aria-label="언어 전환"><i class="fas fa-globe"></i> <span>EN</span></button>
   </header>
 
   <main>
     <section id="about" class="section">
-      <h2>자기소개서</h2>
-      <p>안녕하세요! 저는 Java와 Spring을 활용한 백엔드 개발에 열정이 있는 개발자 신승우입니다. 다양한 경험을 통해 개발 역량을 키워왔고, 다양한 프로젝트를 통해 실력을 쌓아왔습니다. 효율적인 문제 해결과 협업을 중요하게 생각하며, 항상 새로운 기술을 배우는 것에 열정을 가지고 있습니다.</p>
-      <p><strong>1번 - 계기:</strong><br>
-        집안 사정으로 인해 대학을 중퇴하고 군대에서 통신병으로 활동하며 네트워크와 시스템 관리의 중요성을 체감하였습니다. 이후 전산 업무를 담당하여 컴퓨터 및 네트워크를 관리하면서 시스템의 안정성을 유지하고 문제를 해결하는 과정에서 큰 보람을 느꼈습니다. 시간이 갈수록 불량에 대한 고장을 단순히 고쳐주는 일만 반복하면서 성장의 한계를 느끼게 되었고, 진정으로 제가 원하는 길은 아니라고 생각했습니다. 오랜 고민 끝에 저만의 기술력이 부족하다는 사실을 인식하고, 전문성을 발휘할 수 있는 일을 찾아야겠다는 결심을 하게 되었습니다. 그 후 직접적인 시스템 개발을 할 수 있는 백엔드 개발자로 도전을 마음먹고 국비 교육 프로그램을 통해 백엔드 자바 및 웹 개발 과정에 참여하여 장기간의 공부를 시작하게 되었습니다.</p>
-      
-      <p><strong>2번 - 강점:</strong><br>
-        저의 강점은 높은 집중력과 몰입도입니다. 프로그래밍을 할 때 깊이 있는 몰입을 통해 작업에 전념하곤 합니다. 특히 AI나 GPT와 같은 도구를 활용하는 데 능숙하며, 질문을 넘어 제가 원하는 부분을 추가해 달라고 요청하고 그 과정에서 전체 코드를 보여주며 부족한 부분을 추천받는 능동적인 접근 방식을 취합니다. 이러한 방법은 실무에서 팀 프로젝트를 진행하며 다양한 문제 상황에 부딪혔을 때 매우 유용한 강점이 된다고 생각합니다. 저는 여러 가지 문제 해결 방안을 제안하고 최적의 해결책을 도출할 수 있는 역량을 지녔습니다.</p>
-
-      <p><strong>3번 - 기술:</strong><br>
-        이를 바탕으로 고객이 만족하는 개발자로 성장하고자 합니다. 저의 목표는 기술을 통해 문제를 해결하고 고객에게 가치를 제공하는 것입니다. 고객의 요구사항을 명확히 이해하고, 최적의 솔루션을 제시하는 능력을 지속적으로 향상시켜 나가고 있습니다. 제 기술적 역량과 문제 해결 능력을 바탕으로, 더 나은 서비스를 제공하는 개발자가 되기를 바랍니다.</p>
-
-      <p><strong>4번 - 포부:</strong><br>
-        저는 항상 내가 고객이라면 어떻게 받아들일지 고민하며 개발에 임하고, 회사에 긍정적인 가치를 창출할 수 있는 개발자가 되겠습니다. 기술의 발전에 따라 계속해서 배우고 성장할 수 있는 환경에서 함께 일하고 싶습니다. 끊임없이 발전하는 개발자로서, 언제나 최선의 결과를 낼 수 있도록 노력할 것입니다.</p>
+      <h2 data-ko="자기소개서" data-en="About Me">자기소개서</h2>
+      <p class="intro-highlight" data-ko="Java와 Spring으로 문제를 해결하는 백엔드 개발자" data-en="Backend Developer Solving Problems with Java and Spring">Java와 Spring으로 문제를 해결하는 백엔드 개발자</p>
+      <p data-ko="안녕하세요! 저는 Java와 Spring을 활용한 백엔드 개발에 열정이 있는 개발자 신승우입니다. 다양한 경험을 통해 개발 역량을 키워왔고, 다양한 프로젝트를 통해 실력을 쌓아왔습니다. 효율적인 문제 해결과 협업을 중요하게 생각하며, 항상 새로운 기술을 배우는 것에 열정을 가지고 있습니다." data-en="Hello! I am Seungwoo Shin, a backend developer passionate about Java and Spring. I have built my skills through various experiences and projects. I value efficient problem-solving and collaboration, and I am always eager to learn new technologies.">
+        안녕하세요! 저는 Java와 Spring을 활용한 백엔드 개발에 열정이 있는 개발자 신승우입니다. 다양한 경험을 통해 개발 역량을 키워왔고, 다양한 프로젝트를 통해 실력을 쌓아왔습니다. 효율적인 문제 해결과 협업을 중요하게 생각하며, 항상 새로운 기술을 배우는 것에 열정을 가지고 있습니다.
+      </p>
+      <p><strong data-ko="1번 - 계기:" data-en="1. Motivation:"><strong>1번 - 계기:</strong></strong><br>
+        <span data-ko="집안 사정으로 인해 대학을 중퇴하고 군대에서 통신병으로 활동하며 네트워크와 시스템 관리의 중요성을 체감하였습니다. 이후 전산 업무를 담당하여 컴퓨터 및 네트워크를 관리하면서 시스템의 안정성을 유지하고 문제를 해결하는 과정에서 큰 보람을 느꼈습니다. 시간이 갈수록 불량에 대한 고장을 단순히 고쳐주는 일만 반복하면서 성장의 한계를 느끼게 되었고, 진정으로 제가 원하는 길은 아니라고 생각했습니다. 오랜 고민 끝에 저만의 기술력이 부족하다는 사실을 인식하고, 전문성을 발휘할 수 있는 일을 찾아야겠다는 결심을 하게 되었습니다. 그 후 직접적인 시스템 개발을 할 수 있는 백엔드 개발자로 도전을 마음먹고 국비 교육 프로그램을 통해 백엔드 자바 및 웹 개발 과정에 참여하여 장기간의 공부를 시작하게 되었습니다." data-en="Due to family circumstances, I dropped out of university and served as a communications soldier in the military, where I realized the importance of network and system management. While working in IT operations, I managed computers and networks, finding great satisfaction in maintaining system stability and solving issues. However, over time, I felt limited by the repetitive task of fixing hardware issues and realized it wasn’t the path I truly wanted. After much thought, I recognized my lack of technical expertise and decided to pursue a career where I could demonstrate professionalism. I then decided to become a backend developer, enrolling in a government-funded training program for backend Java and web development, embarking on a long-term study journey.">
+          집안 사정으로 인해 대학을 중퇴하고 군대에서 통신병으로 활동하며 네트워크와 시스템 관리의 중요성을 체감하였습니다. 이후 전산 업무를 담당하여 컴퓨터 및 네트워크를 관리하면서 시스템의 안정성을 유지하고 문제를 해결하는 과정에서 큰 보람을 느꼈습니다. 시간이 갈수록 불량에 대한 고장을 단순히 고쳐주는 일만 반복하면서 성장의 한계를 느끼게 되었고, 진정으로 제가 원하는 길은 아니라고 생각했습니다. 오랜 고민 끝에 저만의 기술력이 부족하다는 사실을 인식하고, 전문성을 발휘할 수 있는 일을 찾아야겠다는 결심을 하게 되었습니다. 그 후 직접적인 시스템 개발을 할 수 있는 백엔드 개발자로 도전을 마음먹고 국비 교육 프로그램을 통해 백엔드 자바 및 웹 개발 과정에 참여하여 장기간의 공부를 시작하게 되었습니다.
+        </span>
+      </p>
+      <p><strong data-ko="2번 - 강점:" data-en="2. Strengths:"><strong>2번 - 강점:</strong></strong><br>
+        <span data-ko="저의 강점은 높은 집중력과 몰입도입니다. 프로그래밍을 할 때 깊이 있는 몰입을 통해 작업에 전념하곤 합니다. 특히 AI나 GPT와 같은 도구를 활용하는 데 능숙하며, 질문을 넘어 제가 원하는 부분을 추가해 달라고 요청하고 그 과정에서 전체 코드를 보여주며 부족한 부분을 추천받는 능동적인 접근 방식을 취합니다. 이러한 방법은 실무에서 팀 프로젝트를 진행하며 다양한 문제 상황에 부딪혔을 때 매우 유용한 강점이 된다고 생각합니다. 저는 여러 가지 문제 해결 방안을 제안하고 최적의 해결책을 도출할 수 있는 역량을 지녔습니다。" data-en="My strength lies in my high focus and immersion. I often dive deeply into programming tasks with great concentration. I am skilled at using tools like AI and GPT, going beyond simple queries to request additional features and receiving recommendations for improvements by sharing my code. This proactive approach has been particularly useful in team projects, where I faced various challenges. I can propose multiple solutions and derive the best one.">
+          저의 강점은 높은 집중력과 몰입도입니다. 프로그래밍을 할 때 깊이 있는 몰입을 통해 작업에 전념하곤 합니다. 특히 AI나 GPT와 같은 도구를 활용하는 데 능숙하며, 질문을 넘어 제가 원하는 부분을 추가해 달라고 요청하고 그 과정에서 전체 코드를 보여주며 부족한 부분을 추천받는 능동적인 접근 방식을 취합니다. 이러한 방법은 실무에서 팀 프로젝트를 진행하며 다양한 문제 상황에 부딪혔을 때 매우 유용한 강점이 된다고 생각합니다. 저는 여러 가지 문제 해결 방안을 제안하고 최적의 해결책을 도출할 수 있는 역량을 지녔습니다。
+        </span>
+      </p>
+      <p><strong data-ko="3번 - 기술:" data-en="3. Skills:"><strong>3번 - 기술:</strong></strong><br>
+        <span data-ko="이를 바탕으로 고객이 만족하는 개발자로 성장하고자 합니다. 저의 목표는 기술을 통해 문제를 해결하고 고객에게 가치를 제공하는 것입니다. 고객의 요구사항을 명확히 이해하고, 최적의 솔루션을 제시하는 능력을 지속적으로 향상시켜 나가고 있습니다. 제 기술적 역량과 문제 해결 능력을 바탕으로, 더 나은 서비스를 제공하는 개발자가 되기를 바랍니다。" data-en="Based on this, I aim to grow into a developer who satisfies clients. My goal is to solve problems through technology and provide value to customers. I continuously strive to understand client requirements clearly and offer optimal solutions, improving my technical skills and problem-solving abilities to deliver better services.">
+          이를 바탕으로 고객이 만족하는 개발자로 성장하고자 합니다. 저의 목표는 기술을 통해 문제를 해결하고 고객에게 가치를 제공하는 것입니다. 고객의 요구사항을 명확히 이해하고, 최적의 솔루션을 제시하는 능력을 지속적으로 향상시켜 나가고 있습니다. 제 기술적 역량과 문제 해결 능력을 바탕으로, 더 나은 서비스를 제공하는 개발자가 되기를 바랍니다。
+        </span>
+      </p>
+      <p><strong data-ko="4번 - 포부:" data-en="4. Aspiration:"><strong>4번 - 포부:</strong></strong><br>
+        <span data-ko="저는 항상 내가 고객이라면 어떻게 받아들일지 고민하며 개발에 임하고, 회사에 긍정적인 가치를 창출할 수 있는 개발자가 되겠습니다. 기술의 발전에 따라 계속해서 배우고 성장할 수 있는 환경에서 함께 일하고 싶습니다. 끊임없이 발전하는 개발자로서, 언제나 최선의 결과를 낼 수 있도록 노력할 것입니다。" data-en="I always develop with the mindset of how a customer would perceive my work, aiming to create positive value for the company. I want to work in an environment where I can continuously learn and grow with technological advancements. As a constantly evolving developer, I will always strive to deliver the best results.">
+          저는 항상 내가 고객이라면 어떻게 받아들일지 고민하며 개발에 임하고, 회사에 긍정적인 가치를 창출할 수 있는 개발자가 되겠습니다. 기술의 발전에 따라 계속해서 배우고 성장할 수 있는 환경에서 함께 일하고 싶습니다. 끊임없이 발전하는 개발자로서, 언제나 최선의 결과를 낼 수 있도록 노력할 것입니다。
+        </span>
+      </p>
     </section>
 
     <section id="education" class="section">
-      <h2>학력</h2>
+      <h2 data-ko="학력" data-en="Education">학력</h2>
       <ul>
-        <li><i class="fas fa-school"></i> 서창고등학교 졸업 (2011.03 ~ 2014.03)</li>
-        <li><i class="fas fa-university"></i> 영산대학교 컴퓨터공학 중퇴 (2014.04 ~ 2017.09)</li>
+        <li><i class="fas fa-school"></i> <span data-ko="서창고등학교 졸업 (2011.03 ~ 2014.03)" data-en="Seochang High School, Graduated (03/2011 ~ 03/2014)">서창고등학교 졸업 (2011.03 ~ 2014.03)</span></li>
+        <li><i class="fas fa-university"></i> <span data-ko="영산대학교 컴퓨터공학 중퇴 (2014.04 ~ 2017.09)" data-en="Yeongsan University, Computer Engineering (Dropped Out, 04/2014 ~ 09/2017)">영산대학교 컴퓨터공학 중퇴 (2014.04 ~ 2017.09)</span></li>
       </ul>
     </section>
 
     <section id="experience" class="section">
-      <h2>경력</h2>
+      <h2 data-ko="경력" data-en="Experience">경력</h2>
       <ul>
-        <li><i class="fas fa-briefcase"></i> <strong>중동송유</strong> - 총무 및 배차팀 팀장 (2022.02 ~ 2024.02)
+        <li><i class="fas fa-briefcase"></i> <strong data-ko="중동송유" data-en="Jungdong Songyu">중동송유</strong> - <span data-ko="총무 및 배차팀 팀장 (2022.02 ~ 2024.02)" data-en="General Affairs and Dispatch Team Leader (02/2022 ~ 02/2024)">총무 및 배차팀 팀장 (2022.02 ~ 2024.02)</span>
           <ul>
-            <li>배차 및 물류 관리 시스템 개선, 재고 관리 및 효율성 향상</li>
-            <li>프로그램을 활용한 배차 일정 최적화, 효율성 20% 향상</li>
+            <li data-ko="배차 및 물류 관리 시스템 개선, 재고 관리 및 효율성 향상" data-en="Improved dispatch and logistics management systems, enhanced inventory management and efficiency">배차 및 물류 관리 시스템 개선, 재고 관리 및 효율성 향상</li>
+            <li data-ko="프로그램을 활용한 배차 일정 최적화, 효율성 20% 향상" data-en="Optimized dispatch schedules using software, improving efficiency by 20%">프로그램을 활용한 배차 일정 최적화, 효율성 20% 향상</li>
           </ul>
         </li>
-        <li><i class="fas fa-briefcase"></i> <strong>브레스마스크</strong> - 경영지원팀 팀원 (2020.12 ~ 2021.12)
+        <li><i class="fas fa-briefcase"></i> <strong data-ko="브레스마스크" data-en="Breath Mask">브레스마스크</strong> - <span data-ko="경영지원팀 팀원 (2020.12 ~ 2021.12)" data-en="Business Support Team Member (12/2020 ~ 12/2021)">경영지원팀 팀원 (2020.12 ~ 2021.12)</span>
           <ul>
-            <li>고객 관리, 송장 발행 및 재고 관리 업무 수행</li>
-            <li>송장 처리 속도 15% 향상, 고객 만족도 증대</li>
+            <li data-ko="고객 관리, 송장 발행 및 재고 관리 업무 수행" data-en="Managed customer relations, issued invoices, and handled inventory">고객 관리, 송장 발행 및 재고 관리 업무 수행</li>
+            <li data-ko="송장 처리 속도 15% 향상, 고객 만족도 증대" data-en="Improved invoice processing speed by 15%, increasing customer satisfaction">송장 처리 속도 15% 향상, 고객 만족도 증대</li>
           </ul>
         </li>
-        <li><i class="fas fa-briefcase"></i> <strong>위메프</strong> - 전산팀 팀원 (2019.11 ~ 2020.11)
+        <li><i class="fas fa-briefcase"></i> <strong data-ko="위메프" data-en="Wemakeprice">위메프</strong> - <span data-ko="전산팀 팀원 (2019.11 ~ 2020.11)" data-en="IT Team Member (11/2019 ~ 11/2020)">전산팀 팀원 (2019.11 ~ 2020.11)</span>
           <ul>
-            <li>PC 및 네트워크 관리, 원격 지원 제공</li>
-            <li>시스템 안정성 향상 및 사용자 만족도 95% 달성</li>
+            <li data-ko="PC 및 네트워크 관리, 원격 지원 제공" data-en="Managed PCs and networks, provided remote support">PC 및 네트워크 관리, 원격 지원 제공</li>
+            <li data-ko="시스템 안정성 향상 및 사용자 만족도 95% 달성" data-en="Enhanced system stability, achieving 95% user satisfaction">시스템 안정성 향상 및 사용자 만족도 95% 달성</li>
           </ul>
         </li>
-        <li><i class="fas fa-briefcase"></i> <strong>래딕스파트너스</strong> - 보안팀 주임 (2017.10 ~ 2019.10)
+        <li><i class="fas fa-briefcase"></i> <strong data-ko="래딕스파트너스" data-en="Radix Partners">래딕스파트너스</strong> - <span data-ko="보안팀 주임 (2017.10 ~ 2019.10)" data-en="Security Team Assistant Manager (10/2017 ~ 10/2019)">보안팀 주임 (2017.10 ~ 2019.10)</span>
           <ul>
-            <li>보안 시스템 관리, 보안 사고 대응 및 기록 관리</li>
-            <li>보안 이슈 발생 건수 20% 감소, 고객 응대 만족도 향상</li>
+            <li data-ko="보안 시스템 관리, 보안 사고 대응 및 기록 관리" data-en="Managed security systems, responded to incidents, and maintained records">보안 시스템 관리, 보안 사고 대응 및 기록 관리</li>
+            <li data-ko="보안 이슈 발생 건수 20% 감소, 고객 응대 만족도 향상" data-en="Reduced security incidents by 20%, improved customer response satisfaction">보안 이슈 발생 건수 20% 감소, 고객 응대 만족도 향상</li>
           </ul>
         </li>
       </ul>
     </section>
 
     <section id="projects" class="section">
-      <h2>프로젝트</h2>
+      <h2 data-ko="프로젝트" data-en="Projects">프로젝트</h2>
       <ul>
         <li>
-          <i class="fas fa-project-diagram"></i> <strong>롯데온 쇼핑물 프로젝트</strong>: Spring Boot와 JSP를 활용하여 백엔드 서버를 구축하고 Oracle DB와 연동.
-          <p>기술 스택: Java, Spring Boot, JSP, Oracle DB</p>
-          <a href="https://github.com/seungwoosin/lotteon-project-main" target="_blank" aria-label="GitHub 프로필"><i class="fab fa-github"></i> GitHub</a></li>
+          <i class="fas fa-project-diagram"></i> <strong data-ko="롯데온 쇼핑물 프로젝트" data-en="LotteON Shopping Mall Project">롯데온 쇼핑물 프로젝트</strong>
+          <p data-ko="Spring Boot와 JSP를 활용해 쇼핑몰 백엔드 서버를 구축하고 Oracle DB를 연동한 프로젝트. 사용자 인증 및 상품 관리 기능 구현." data-en="A project that built a shopping mall backend server using Spring Boot and JSP, integrated with Oracle DB. Implemented user authentication and product management features.">
+            Spring Boot와 JSP를 활용해 쇼핑몰 백엔드 서버를 구축하고 Oracle DB를 연동한 프로젝트. 사용자 인증 및 상품 관리 기능 구현.
+          </p>
+          <p data-ko="기술 스택: Java, Spring Boot, JSP, Oracle DB" data-en="Tech Stack: Java, Spring Boot, JSP, Oracle DB">기술 스택: Java, Spring Boot, JSP, Oracle DB</p>
+          <picture>
+            <source srcset="portfolio-site/images/lotteon-screenshot.webp" type="image/webp">
+            <img src="portfolio-site/images/lotteon-screenshot.jpg" alt="롯데온 프로젝트 스크린샷" class="project-img" loading="lazy">
+          </picture>
+          <a href="https://github.com/seungwoosin/lotteon-project-main" target="_blank" aria-label="GitHub 프로필"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://demo-link.com" target="_blank" class="demo-link"><i class="fas fa-external-link-alt"></i> <span data-ko="Live Demo" data-en="Live Demo">Live Demo</span></a>
+          <button class="details-btn" data-project="lotteon"><i class="fas fa-info-circle"></i> <span data-ko="자세히 보기" data-en="View Details">자세히 보기</span></button>
         </li>
         <li>
-          <i class="fas fa-project-diagram"></i> <strong>이노베이트 연계 웹 어플리케이션 프로젝트</strong>: 다양한 회사의 웹사이트 및 시스템 유지보수, 백엔드 시스템 구축 경험
-          <p>기술 스택: Java, MySQL, monggodb, React, HTML/CSS</p>
-          <p>프로젝트 와 백을 나누어서 구분</p>
-          <a href="https://github.com/seungwoosin/lotte-2nd-project-back-main" target="_blank" aria-label="GitHub 프로필"><i class="fab fa-github"></i> GitHub</a></li>
-          <a href="https://github.com/seungwoosin/lotte-2nd-project-front-main" target="_blank" aria-label="GitHub 프로필"><i class="fab fa-github"></i> GitHub</a></li>
+          <i class="fas fa-project-diagram"></i> <strong data-ko="이노베이트 연계 웹 어플리케이션 프로젝트" data-en="Innovate Linked Web Application Project">이노베이트 연계 웹 어플리케이션 프로젝트</strong>
+          <p data-ko="다양한 회사의 웹사이트 및 시스템 유지보수와 백엔드 시스템을 구축한 프로젝트. 프론트와 백엔드를 분리해 협업 효율성을 높임." data-en="A project that maintained websites and systems for various companies, building backend systems. Separated frontend and backend to improve collaboration efficiency.">
+            다양한 회사의 웹사이트 및 시스템 유지보수와 백엔드 시스템을 구축한 프로젝트. 프론트와 백엔드를 분리해 협업 효율성을 높임.
+          </p>
+          <p data-ko="기술 스택: Java, MySQL, MongoDB, React, HTML/CSS" data-en="Tech Stack: Java, MySQL, MongoDB, React, HTML/CSS">기술 스택: Java, MySQL, MongoDB, React, HTML/CSS</p>
+          <picture>
+            <source srcset="portfolio-site/images/innovate-screenshot.webp" type="image/webp">
+            <img src="portfolio-site/images/innovate-screenshot.jpg" alt="이노베이트 프로젝트 스크린샷" class="project-img" loading="lazy">
+          </picture>
+          <a href="https://github.com/seungwoosin/lotte-2nd-project-back-main" target="_blank" aria-label="GitHub 프로필"><i class="fab fa-github"></i> <span data-ko="GitHub (백엔드)" data-en="GitHub (Backend)">GitHub (백엔드)</span></a>
+          <a href="https://github.com/seungwoosin/lotte-2nd-project-front-main" target="_blank" aria-label="GitHub 프로필"><i class="fab fa-github"></i> <span data-ko="GitHub (프론트엔드)" data-en="GitHub (Frontend)">GitHub (프론트엔드)</span></a>
+          <a href="https://demo-link.com" target="_blank" class="demo-link"><i class="fas fa-external-link-alt"></i> <span data-ko="Live Demo" data-en="Live Demo">Live Demo</span></a>
+          <button class="details-btn" data-project="innovate"><i class="fas fa-info-circle"></i> <span data-ko="자세히 보기" data-en="View Details">자세히 보기</span></button>
         </li>
       </ul>
     </section>
 
     <section id="skills" class="section">
-      <h2>기술 스택</h2>
-      <p><i class="fab fa-java"></i> Java | <i class="fab fa-angular"></i> Spring | <i class="fas fa-cogs"></i> Spring Boot | <i class="fas fa-database"></i> MySQL | <i class="fab fa-html5"></i> HTML/CSS | <i class="fab fa-js"></i> JavaScript | <i class="fab fa-react"></i> React</p>
+      <h2 data-ko="기술 스택" data-en="Skills">기술 스택</h2>
+      <div class="skills-list">
+        <span class="skill-tag" data-tooltip="백엔드 핵심 언어"><i class="fab fa-java"></i> Java</span>
+        <span class="skill-tag" data-tooltip="백엔드 프레임워크"><i class="fas fa-cogs"></i> Spring</span>
+        <span class="skill-tag" data-tooltip="경량 프레임워크"><i class="fas fa-cogs"></i> Spring Boot</span>
+        <span class="skill-tag" data-tooltip="데이터베이스"><i class="fas fa-database"></i> MySQL</span>
+        <span class="skill-tag" data-tooltip="프론트엔드 기본"><i class="fab fa-html5"></i> HTML/CSS</span>
+        <span class="skill-tag" data-tooltip="동적 웹 구현"><i class="fab fa-js"></i> JavaScript</span>
+        <span class="skill-tag" data-tooltip="프론트엔드 라이브러리"><i class="fab fa-react"></i> React</span>
+      </div>
     </section>
 
     <section id="media" class="section">
-      <h2>프로젝트 작업 영상</h2>
-      <h3>팀프로젝트 1차 작업</h3>
-      <video controls width="600">
+      <h2 data-ko="프로젝트 작업 영상" data-en="Project Videos">프로젝트 작업 영상</h2>
+      <h3 data-ko="팀프로젝트 1차 작업" data-en="Team Project 1st Work">팀프로젝트 1차 작업</h3>
+      <video controls width="600" loading="lazy" poster="portfolio-site/images/video-poster-1.jpg" aria-label="팀프로젝트 1차 작업 영상">
         <source src="portfolio-site/assets/1차 프로젝트.mp4" type="video/mp4">
-        브라우저에서 비디오를 지원하지 않습니다.
+        <span data-ko="브라우저에서 비디오를 지원하지 않습니다." data-en="Your browser does not support the video tag.">브라우저에서 비디오를 지원하지 않습니다.</span>
       </video>
-      <h3>프로젝트 2차 작업</h3>
-      <video controls width="600">
+      <h3 data-ko="프로젝트 2차 작업" data-en="Project 2nd Work">프로젝트 2차 작업</h3>
+      <video controls width="600" loading="lazy" poster="portfolio-site/images/video-poster-2.jpg" aria-label="프로젝트 2차 작업 영상">
         <source src="portfolio-site/assets/2차 개인프로젝트.mp4" type="video/mp4">
-        브라우저에서 비디오를 지원하지 않습니다.
+        <span data-ko="브라우저에서 비디오를 지원하지 않습니다." data-en="Your browser does not support the video tag.">브라우저에서 비디오를 지원하지 않습니다.</span>
       </video>
     </section>
 
     <section id="contact" class="section">
-      <h2>연락처</h2>
-      <p><i class="fas fa-envelope"></i> Email: soc23231@gmail.com</p>
-      <p><i class="fas fa-phone"></i> Phone: 010-5276-3454</p>
-    </section>
-
-    <section id="social" class="section">
-      <h2>소셜 미디어</h2>
-      <ul class="social-links">
-        <li><a href="https://github.com/seungwoosin" target="_blank" aria-label="GitHub 프로필"><i class="fab fa-github"></i> GitHub</a></li>
+      <h2 data-ko="연락처" data-en="Contact">연락처</h2>
+      <ul class="contact-links">
+        <li><i class="fas fa-envelope"></i> <a href="mailto:soc23231@gmail.com">soc23231@gmail.com</a></li>
+        <li><i class="fas fa-phone"></i> <a href="tel:01052763454">010-5276-3454</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/seungwoosin" target="_blank">GitHub</a></li>
       </ul>
+      <h3 data-ko="메시지 보내기" data-en="Send a Message">메시지 보내기</h3>
+      <form id="contact-form">
+        <label for="name" data-ko="이름" data-en="Name">이름</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email" data-ko="이메일" data-en="Email">이메일</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message" data-ko="메시지" data-en="Message">메시지</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit" class="form-btn"><i class="fas fa-paper-plane"></i> <span data-ko="보내기" data-en="Send">보내기</span></button>
+      </form>
     </section>
   </main>
 
+  <!-- 프로젝트 모달 -->
+  <div id="project-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-content">
+      <button id="close-modal" class="close-modal" aria-label="모달 닫기"><i class="fas fa-times"></i></button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
   <footer>
-    <p>&copy; 2024 신승우. All rights reserved.</p>
-    <button id="scrollToTop" class="hidden" aria-label="페이지 상단으로 이동"><i class="fas fa-arrow-up"></i> Top</button>
+    <p>© 2024 신승우. <span data-ko="All rights reserved." data-en="All rights reserved.">All rights reserved.</span></p>
+    <div class="footer-social">
+      <a href="https://github.com/seungwoosin" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+    <button id="scrollToTop" class="hidden" aria-label="페이지 상단으로 이동"><i class="fas fa-arrow-up"></i> <span data-ko="Top" data-en="Top">Top</span></button>
   </footer>
 
-  <script src="portfolio-site/script.js"></script>
-  <script>
-    window.addEventListener('load', function() {
-        document.getElementById('loading').style.display = 'none';
-    });
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.3 });
-
-    document.querySelectorAll('.section').forEach(section => {
-      observer.observe(section);
-    });
-
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('nav a');
-      const scrollToTopButton = document.getElementById('scrollToTop');
-  
-      sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          navLinks[index]?.classList.add('active');
-        }
-      });
-
-      if (window.scrollY > 300) {
-        scrollToTopButton?.classList.add('visible');
-        scrollToTopButton?.classList.remove('hidden');
-      } else {
-        scrollToTopButton?.classList.add('hidden');
-        scrollToTopButton?.classList.remove('visible');
-      }
-    });
-
-    document.getElementById('scrollToTop')?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+  <script src="portfolio-site/script.js" defer></script>
 </body>
 </html>
